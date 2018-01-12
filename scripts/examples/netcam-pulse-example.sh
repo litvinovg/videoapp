@@ -1,0 +1,11 @@
+#! /bin/bash
+IP="FILL_NETCAM_IP"
+YOUTUBEKEY="FILL_YOUTUBE_KEY"
+CAM="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+AUDIOIP=FILL_PULESAUDIO_DEVICE_IP
+ AUDIOCHANNEL="FILL_PULSEAUDIO_CHANNEL_NAME"
+#Time offset between audio and video
+ITSOFFSET="1"
+CAMUSER="FILL_CAM_USER"
+CAMPASSWORD="FILL_CAM_PASS"
+~/scripts/templates/netcam-pulse.sh $IP $KEY $CAM $AUDIOIP $AUDIOCHANNEL $ITSOFFSET $CAMUSER $CAMPASSWORD &

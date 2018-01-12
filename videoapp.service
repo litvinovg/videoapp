@@ -1,0 +1,7 @@
+[Unit]
+Description=uWSGI instance to serve videoapp
+[Service]
+ExecStartPre=-/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown videoapp:nginx /run/uwsgi'
+ExecStart=/usr/bin/bash -c 'cd /var/lib/videoapp; source py3env/bin/activate; uwsgi --ini videoapp.ini'
+[Install]
+WantedBy=multi-user.target 
